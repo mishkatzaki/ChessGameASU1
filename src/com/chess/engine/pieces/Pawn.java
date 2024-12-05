@@ -60,8 +60,8 @@ public class Pawn  {
 
 //     the pawn jump
             else if (currentCadidateOffset==7 &&
-                    !((BoardUtils.EIGHTH_COLUMN[this,piecePosition]&&this.pieceAlliance.isWhite( ) ||
-                    (BoardUtils.FIRST_COLUMN[this.piecePosition]&& this.pieceAalliance.isBlack()))))
+                    !((BoardUtils.EIGHTH_COLUMN[this.piecePosition] &&this.pieceAlliance.isWhite( ) ||
+                    (BoardUtils.FIRST_COLUMN[this.piecePosition] && this.pieceAalliance.isBlack()))))
             {
                 if(board.getTile(candidateDestinationCoordinate).isTileOccupied()){
                     final Piece pieceOnCandidate = board.getTile(candidateDestinationCoordinate).getPiece();
@@ -72,7 +72,7 @@ public class Pawn  {
 
             }
             else if (currentCadidateOffset==9 &&
-                    !((BoardUtils.FIRST_COLUMN[this,piecePosition]&&this.pieceAlliance.isWhite() ||
+                    !((BoardUtils.FIRST_COLUMN[this.piecePosition] && this.pieceAlliance.isWhite() ||
                     (BoardUtils.EIGHTH_COLUMN[this.piecePosition]&& this.pieceAalliance.isBlack()))))
             {
                 if (board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
