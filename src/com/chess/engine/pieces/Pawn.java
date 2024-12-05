@@ -34,7 +34,7 @@ public class Pawn  {
 //            the formula above calculate the movement of the black pawn(cause they move in the positive direction)
 //            to solve this we must declare a methode in the alliance class returns directionary
 
-            if (!BoardUtilis.isValidTileCoordinate(candidateDestinationCoordinate)){
+            if (!BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)){
                 continue;
             }
             if(currentCadidateOffset==8 && !board.getTile(candidateDestinationCoordinate).isTileOccupied()){

@@ -6,7 +6,6 @@ import com.chess.engine.board.Board;
 import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
-import com.chess.engine.pieces.Piece;
 import com.google.common.collect.ImmutableList;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class King extends Piece {
 //	•	Horizontal moves: -1, 1.
 //	•	Vertical moves: -8, 8.
 
-    King(int piecePostion, Alliance pieceAlliance) {
+    public King(int piecePostion, Alliance pieceAlliance) {
         super(piecePostion, pieceAlliance);
     }
 //    override
@@ -68,6 +67,7 @@ public class King extends Piece {
 
         return ImmutableList.copyOf(legalMoves);
 //        ensuring that it cannot be modified after calculation.
+
     }
 
     private static boolean isFirstColumnExclusion (final int currentPosition , final int candidateOffset){
@@ -77,9 +77,9 @@ public class King extends Piece {
 //	•	-1: Horizontal left move.
 //	•	7: Bottom-left diagonal.
     }
-    private static boolean isEighthColumnExclusion (final int currentPosition , final int candidateOffset){
-        return BoardUtils.EIGHTH_COLUMN[currentPosition]&& (candidateOffset==1|| candidateOffset ==9|| candidateOffset==-7);
+    private static boolean isEighthColumnExclusion (final int currentPosition , final int candidateOffset) {
+        return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == 1 || candidateOffset == 9 || candidateOffset == -7);
 
 
-
+    }
     }
