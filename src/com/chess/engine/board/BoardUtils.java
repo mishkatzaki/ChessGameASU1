@@ -21,8 +21,16 @@ public class BoardUtils {
         } while (columnNumber < NUM_TILES);
         return column;
     }
-
-
+// Ahmed
+    private static boolean[] intRow(int rowNumber){
+        final boolean [] row = new boolean[NUM_TILES];
+        do {
+            row[rowNumber]= true;
+            rowNumber++;
+        }while (rowNumber%NUM_TILES_PER_ROW != 0);
+        return row;
+    }
+// End Ahmed
     public static boolean isValidTileCoordinate(int coordinate) {
         return coordinate >= 0 && coordinate <= 64;
     }
