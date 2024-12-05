@@ -5,7 +5,8 @@ import com.chess.engine.board.Board;
 import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
-import org.carrot2.shaded.guava.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableList;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -44,7 +45,7 @@ public class Queen extends Piece {
                         final Alliance pieceAlliance = pieceAtDestination.getPieceAlliance();
 
                         if (this.pieceAlliance != pieceAlliance) {
-                            legalMoves.add(new Move.AttackMove(board, this, candidateDestinationCoordinate,
+                            legalMoves.add(new Move.attackMove(board, this, candidateDestinationCoordinate,
                                     pieceAtDestination));
                         }
                         break;

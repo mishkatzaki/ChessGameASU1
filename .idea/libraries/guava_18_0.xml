@@ -2,6 +2,7 @@
   <library name="guava-18.0">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../../../Projects/Java/guava/guava-18.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guava-33.3.1-jre.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
