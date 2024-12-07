@@ -13,6 +13,7 @@ public abstract class Piece {
     public Piece(int piecePosition, Alliance pieceAlliance) {
         this.piecePosition = piecePosition;
         this.pieceAlliance = pieceAlliance;
+        //TODO more work here
         this.isFirstMove = false; //Ahmed Added
     }
     public Alliance getPieceAlliance() {
@@ -43,4 +44,7 @@ public abstract class Piece {
         // End Ahmed Added
     }
 
+    public boolean isFirstMove() {
+        return isFirstMove;
+    }
 }
