@@ -28,31 +28,31 @@ public class Pawn extends Piece {
         return new Pawn(move.getDestinationCoordinate(),
                 move.getMovedPiece().getPieceAlliance());
     }
-// implemination method
+// implementation method
 
     public Collection<Move> calculateLegalMoves(final Board board) {
 //        the move has a class in the previous code
         final List<Move> legalMoves = new ArrayList();
 // I added this now!
-        for (final int currentCadidateOffset : CANDIDATE_MOVE_COORDINATE) {
+        for (final int currentCandidateOffset : CANDIDATE_MOVE_COORDINATE) {
 
-            final int candidateDestinationCoordinate = this.piecePosition + (this.pieceAlliance.getPieceAlliance().getDirection() * currentCadidateOffset);
+            final int candidateDestinationCoordinate = this.piecePosition + (this.pieceAlliance.getPieceAlliance().getDirection() * currentCandidateOffset);
 //             would apply 8 for black and -8 for white
 
 //            override from previous code
-//            the formula above calculate the movement of the black pawn(cause they move in the positive direction)
-//            to solve this we must declare a methode in the alliance class returns directionary
+//            the formula above calculate the movement of the black pawn(because they move in the positive direction)
+//            to solve this we must declare a methode in the alliance class returns direction
 
             if (!BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
                 continue;
             }
-            if (currentCadidateOffset == 8 && !board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
+            if (currentCandidateOffset == 8 && !board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
 //   need to Do PROMOTION
                 legalMoves.add(new Move.MajorMove(board, this, candidateDestinationCoordinate));
             }
-//non attacking move
+//non-attacking move
 
-            else if (currentCadidateOffset == 16 && this.isFirstMove &&
+            else if (currentCandidateOffset == 16 && this.isFirstMove &&
                     (BoardUtils.SECOND_ROW[this.piecePosition] && this.getPieceAlliance().isWhite()) ||
                     (BoardUtils.SEVENTH_ROW[this.piecePosition] && this.getPieceAlliance().isBlack()))
 //the conditions above represent the positions of the black and white
@@ -67,7 +67,7 @@ public class Pawn extends Piece {
             }
 
 //     the pawn jump
-            else if (currentCadidateOffset == 7 &&
+            else if (currentCandidateOffset == 7 &&
                     !((BoardUtils.EIGHTH_COLUMN[this.piecePosition] && this.pieceAlliance.isWhite() ||
                             (BoardUtils.FIRST_COLUMN[this.piecePosition] && this.pieceAlliance.isBlack())))) {
                 if (board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
@@ -77,7 +77,7 @@ public class Pawn extends Piece {
                     }
                 }
 
-            } else if (currentCadidateOffset == 9 &&
+            } else if (currentCandidateOffset == 9 &&
                     !((BoardUtils.FIRST_COLUMN[this.piecePosition] && this.pieceAlliance.isWhite() ||
                             (BoardUtils.EIGHTH_COLUMN[this.piecePosition] && this.pieceAlliance.isBlack())))) {
                 if (board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
@@ -89,11 +89,11 @@ public class Pawn extends Piece {
                 }
             }
 //kill in diagonal
-//            promotion is miising
+//            promotion is missing
 
 
         }
-// i sing the sing
+// I sing the song of marching men
         return ImmutableList.copyOf(legalMoves);
 
 
