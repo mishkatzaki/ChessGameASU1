@@ -31,7 +31,8 @@ public class King extends Piece {
 //    added this methods
 
     public King movePiece(final Move move) {
-        return new King (move.getDestinationCoordinate(),move.geovedPiece().getPieceAlliance());
+        return new King (move.getDestinationCoordinate(),
+                move.getMovedPiece().getPieceAlliance());
     }
 //    implement move method
 

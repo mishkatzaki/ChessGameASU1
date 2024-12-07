@@ -46,4 +46,18 @@ public enum Alliance {
 
     public abstract boolean isWhite();
     public abstract boolean isBlack();
+
+    public Alliance getPieceAlliance() {
+
+
+        if (this.isWhite()){
+                    return WHITE;
+                };
+                if (this.isBlack()){
+                    return BLACK;
+                }
+                else {
+                    return null;
+                }
+    }
 }
