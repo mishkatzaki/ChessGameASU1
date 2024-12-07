@@ -5,8 +5,20 @@ import com.chess.engine.pieces.Piece;
 public abstract class Move {
      final Board board;
      final Piece movedPiece;
-     final int destinationCoordinate;
 
+    public int getDestinationCoordinate() {
+        return destinationCoordinate;
+    }
+//adde grt destination
+
+    final int destinationCoordinate;
+
+
+    public Piece getMovedPiece() {
+        return movedPiece;
+    }
+
+//    added git moves
 
     public Move(final Board board, final Piece movedPiece, final int destinationCoordinate) {
         this.board = board;

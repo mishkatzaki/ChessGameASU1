@@ -20,10 +20,20 @@ public class King extends Piece {
 //	•	Horizontal moves: -1, 1.
 //	•	Vertical moves: -8, 8.
 
-    public King(int piecePostion, Alliance pieceAlliance) {
+    public King(final int piecePostion,final Alliance pieceAlliance) {
         super(piecePostion, pieceAlliance);
     }
 //    override
+
+    public String toString(){
+        return PieceType.KING.toString();
+    }
+//    added this methods
+
+    public King movePiece(final Move move) {
+        return new King (move.getDestinationCoordinate(),move.geovedPiece().getPieceAlliance());
+    }
+//    implement move method
 
     @Override
     public Collection<Move> calculateLegalMoves(Board board) {
