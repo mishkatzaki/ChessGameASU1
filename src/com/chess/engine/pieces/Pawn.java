@@ -3,13 +3,12 @@ package com.chess.engine.pieces;
 import com.chess.engine.board.Board;
 import com.chess.engine.board.BoardUtils;
 import com.chess.engine.board.Move;
-import com.chess.engine.pieces.Alliance;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Pawn  {
+public class Pawn extends Piece {
 
     private final static int[] CANDIDATE_MOVE_COORDINATE = {8,16,9,7};
     private int piecePosition;
@@ -61,11 +60,11 @@ public class Pawn  {
 //     the pawn jump
             else if (currentCadidateOffset==7 &&
                     !((BoardUtils.EIGHTH_COLUMN[this.piecePosition] &&this.pieceAlliance.isWhite( ) ||
-                    (BoardUtils.FIRST_COLUMN[this.piecePosition] && this.pieceAalliance.isBlack()))))
+                    (BoardUtils.FIRST_COLUMN[this.piecePosition] && this.pieceAlliance.isBlack()))))
             {
                 if(board.getTile(candidateDestinationCoordinate).isTileOccupied()){
                     final Piece pieceOnCandidate = board.getTile(candidateDestinationCoordinate).getPiece();
-                    if (this.piecAlliance != pieceOnCandidate.getPieceAlliance()){
+                    if (this.pieceAlliance != pieceOnCandidate.getPieceAlliance()){
                         legalMoves.add(new Move.MajorMove(board, this, candidateDestinationCoordinate));
                     }
                 }
@@ -73,11 +72,11 @@ public class Pawn  {
             }
             else if (currentCadidateOffset==9 &&
                     !((BoardUtils.FIRST_COLUMN[this.piecePosition] && this.pieceAlliance.isWhite() ||
-                    (BoardUtils.EIGHTH_COLUMN[this.piecePosition]&& this.pieceAalliance.isBlack()))))
+                    (BoardUtils.EIGHTH_COLUMN[this.piecePosition]&& this.pieceAlliance.isBlack()))))
             {
                 if (board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
                     final Piece pieceOnCandidate = board.getTile(candidateDestinationCoordinate).getPiece();
-                    if (this.piecAlliance != pieceOnCandidate.getPieceAlliance()) {
+                    if (this.pieceAlliance != pieceOnCandidate.getPieceAlliance()) {
                         legalMoves.add(new Move.MajorMove(board, this, candidateDestinationCoordinate));
 
                     }
